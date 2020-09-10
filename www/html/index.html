@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>Radical Guestlist</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/checkmark/checkmark.filter.js"></script>
+    <script src="phone-list/phone-list.module.js"></script>
+    <script src="phone-list/phone-list.component.js"></script>
+    <script src="phone-detail/phone-detail.module.js"></script>
+    <script src="phone-detail/phone-detail.component.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <div ng-view></div>
+
+  </body>
+</html>

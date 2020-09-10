@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <table style="width:100%">
+    <tr>
+    <td>
+      <!--Sidebar content-->
+      <div class="input-group input-group-lg">
+        <input type="text" ng-model="$ctrl.query" class="form-control" placeholder="חפש כל דבר" />
+      </div>
+    </td>
+    <td>
+      <button class="btn btn-secondary" ng-click="$ctrl.clear()">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </td>
+  </tr>
+  </table>
+  </div>
+  <div class="row">
+	<div class="col-sm-12">
+      <!--Body content-->
+
+      <ul class="list-group">
+        <li ng-repeat="phone in $ctrl.phones | filter:'0':true:checked | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="list-group-item">
+          <table style="width:100%">
+            <tr>
+              <td style="width:100%">
+                <h4>{{phone.first_name}} {{phone.last_name}}</h4>
+                <p>{{phone.email}}</br>ת.ז: {{phone.personal_id}}</br>#{{phone.confirmation}}</p>
+              <td>
+              <td>
+                  <div ng-if="$ctrl.chosen == phone.id">
+                    <button type="button" class="btn btn-success" ng-click="$ctrl.checkIn(phone)">כרטס</button>
+                    <button type="button" class="btn btn-secondary" ng-click="$ctrl.choose(0)">לאמשנה</button>
+                  </div>
+                  <div ng-if="$ctrl.chosen != phone.id">
+                    <button type="button" class="btn btn-primary" ng-click="$ctrl.choose(phone.id)">בחר</button>
+                  </div>
+              <td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
